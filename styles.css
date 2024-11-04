@@ -1,3 +1,4 @@
+/* Reset and Base Styling */
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +8,16 @@
 body {
   font-family: Arial, sans-serif;
 }
+
+/* Navbar */
 .navbar {
   width: 100%;
   background-color: #0f67b1;
-  padding: 20px 0;
+  padding: 15px 0;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .navbar .container {
@@ -27,15 +30,7 @@ body {
 h3 {
   color: white;
 }
-.logo h1 {
-  color: white;
-  font-size: 24px;
-}
 
-.logo p {
-  color: #ddd;
-  font-size: 14px;
-}
 .logo {
   display: flex;
   align-items: center;
@@ -47,17 +42,6 @@ h3 {
   margin-right: 10px;
 }
 
-.logo h1 {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-}
-
-.logo p {
-  color: #ddd;
-  font-size: 14px;
-  margin: 0;
-}
 .nav-links {
   list-style: none;
   display: flex;
@@ -77,16 +61,16 @@ h3 {
   color: #ffcc00;
 }
 
+/* Hero Section */
 .hero-section {
   height: 100vh;
   background: url("bg.jpg") no-repeat center center/cover;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
-  top: 60px;
+  margin-top: 60px;
 }
 
 .blur-overlay {
@@ -95,35 +79,28 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: inherit;
-  filter: blur(3px);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-text {
   color: white;
-  position: relative;
   z-index: 1;
 }
 
 .hero-text h1 {
-  font-style: arial bold;
   font-size: 66px;
-  margin-bottom: 20px;
-  color: white;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-.hero-text p {
-  font-style: arial bold;
-  font-size: 40px;
-  font-weight: bold;
+.subtitle {
+  font-size: 20px;
   text-transform: uppercase;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
 }
 
+/* Popup */
 .popup {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -141,21 +118,24 @@ h3 {
   width: 300px;
   border-radius: 5px;
   text-align: center;
-  position: relative;
   z-index: 10000;
+  position: relative;
 }
-.popup-content h2 {
-  color: #fff;
-}
+
 .close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 24px;
-  color: #333;
+  color: #fff;
+  font-weight: bold;
+  background: none;
+  border: none;
+  z-index: 10001;
 }
 
+/* Form Inputs and Buttons */
 input[type="text"],
 input[type="email"] {
   width: 100%;
@@ -178,54 +158,128 @@ button:hover {
   background-color: #0056b3;
 }
 
-h2 {
-  color: #fddc1f; /* Darker color for headings */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* About Us Section */
+
+.about-us-section {
+  padding: 40px 0; /* Match the padding with services section */
+  background-color: #0f67b1; /* Background color same as services section */
+  text-align: center;
+  margin-top: 80px; /* Added margin to separate from the navbar */
+  border: 10px solid white; /* Added white border */
+  border-radius: 8px; /* Optional: to give the border rounded corners */
+}
+
+.about-us-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 300px; /* Set a minimum height to match services */
+}
+
+.about-us-image {
+  width: 550px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.about-us-text {
+  max-width: 900px; /* Text area width */
+  text-align: justify; /* Justifying the text */
+  color: white; /* Text color */
+  line-height: 1.6; /* Line height for spacing */
+  letter-spacing: 0.5px; /* Slight letter spacing for readability */
+  margin: 20px; /* Margin around the text */
+  padding: 10px; /* Padding inside the text container */
+}
+
+.about-us-text h2 {
+  color: #fddc1f; /* Header color same as services section */
+  margin-bottom: 10px; /* Reduced spacing below the header */
+  text-align: center;
+}
+
+.about-us-text p {
+  max-width: 500px;
+  color: #f1f1f1; /* Lighter text color for better contrast */
+  margin-bottom: 15px; /* You can adjust this if needed */
+  line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
+  padding: 40px 0;
+  background-color: #0f67b1;
+  color: white;
+  text-align: center;
+  margin-top: 80px; /* Added margin to separate from the navbar */
+  border: 10px solid white; /* Added white border */
+  border-radius: 8px; /* Optional: to give the border rounded corners */
+}
+
+.services-section h2 {
+  margin-bottom: 40px;
+  color: #fddc1f;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-item {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item i {
+  font-size: 40px;
+  color: #0f67b1;
+  margin-bottom: 15px;
+}
+
+.service-item h3 {
+  font-size: 20px;
+  color: #0f67b1;
   margin-bottom: 10px;
 }
 
-.p2 {
-  color: #6556d1;
-  margin-bottom: 15px;
-  line-height: 1.6; /* Spacing between lines */
+.service-item p {
+  color: #555;
+  line-height: 1.6;
 }
-li{
-   color: #6556d1;
-  margin-bottom: 15px;
-  line-height: 1.6; /* Spacing between lines */
-}
-
-/* Additional styling for sections */
-.services,
-.about-us {
-  margin-bottom: 40px;
-}
-.services ul li {
-  color: #b2b2b2;
-  text-decoration: none;
-  list-style-type: none;
+/* General Header Styling */
+h2 {
+  color: #fddc1f;
+  margin-bottom: 10px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 28px;
-  }
-
-  .hero-text p {
-    font-size: 18px;
-  }
-
-  .nav-links {
+  .about-us-content {
     flex-direction: column;
-    margin-top: 10px;
   }
 
-  .nav-links li {
-    margin-bottom: 10px;
+  .services-list {
+    flex-direction: column;
   }
-}
 
-.content,
-.welcome-message {
-  margin-top: 60px;
-  padding: 60px;
+  .service-item {
+    width: 100%;
+  }
 }
